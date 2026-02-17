@@ -14,7 +14,7 @@ This repository implements a **multimodal enhancer** that significantly improves
 
 | File | Purpose | Key Features |
 |------|---------|--------------|
-| **`multimodal_enhancer.py`** | **Main multimodal enhancement method** | Attention mechanisms, data augmentation, cross-validation, achieves +24.1% MAE improvement |
+| **`multimodal_enhancer.py`** | **Main multimodal enhancement method** | Attention mechanisms, data augmentation, cross-validation, achieves +22.12% MAE improvement |
 | **`openvla-baseline.py`** | OpenVLA baseline implementation | SOTA VLA model predictions, generates baseline comparison data |
 | **`sota_replication.py`** | State-of-the-art replication | Reproduces key results from existing literature |
 | **`experiments.py`** | Comprehensive testing framework | Cross-validation, statistical analysis, multiple evaluation metrics |
