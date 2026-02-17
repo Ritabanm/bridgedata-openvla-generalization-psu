@@ -94,7 +94,7 @@ python sota_replication.py
 # Run all evaluation methods
 python experiments.py
 
-# Includes cross-validation, ablation studies, etc.
+# Includes cross-validation,and results from each model, etc.
 ```
 
 ## 📊 Key Results
