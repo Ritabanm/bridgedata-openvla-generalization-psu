@@ -170,21 +170,3 @@ python statistical_analysis.py
 
 **Typical Runtime**: 15-25 minutes total on modern laptop (CPU), 8-15 minutes on GPU/MPS per timestep per sample.
 
-## 📄 Citation
-
-```bibtex
-@misc{openvla_multimodal_enhancement,
-  title={Multimodal Enhancement of OpenVLA: Statistical Analysis and Performance Improvement},
-  author={Ritaban Mitra},
-  year={2026},
-  url={https://github.com/ritabanm/bridgedata-openvla-generalization-psu}
-}
-```
-
-## 🔬 Research Impact
-
-This work demonstrates that **multimodal neural enhancement** can significantly improve Vision-Language-Action model predictions:
-- **Real-world robotics data** (BridgeData)
-- **Statistically significant improvements** (p < 0.0001)
-- **Reproducible methodology** with cross-validation
----
