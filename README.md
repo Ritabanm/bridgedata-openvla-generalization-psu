@@ -19,6 +19,8 @@ This repository implements a **multimodal enhancer** that significantly improves
 | **`sota_replication.py`** | State-of-the-art replication | Reproduces key results from existing literature |
 | **`experiments.py`** | Comprehensive testing framework | Cross-validation, statistical analysis, multiple evaluation metrics |
 | **`statistical_analysis.py`** | Statistical significance testing | Paired t-tests, effect sizes, confidence intervals, visualizations |
+| **`advanced_rl_experiments.py`** | RL Experiments | PPO, Contrastive Learning |
+
 
 ### **📊 Results & Data Files**
 
