@@ -61,7 +61,7 @@ python multimodal_enhancer.py --help
 # Complete pipeline with cross-validation
 python multimodal_enhancer.py
 
-# Expected runtime: 10-20 minutes on CPU, 5-10 minutes on GPU/MPS
+# Expected runtime: 10-20 minutes on CPU, 5-10 minutes on GPU/MPS per timestep.
 # Output: multimodal_enhancer_results.json
 ```
 
