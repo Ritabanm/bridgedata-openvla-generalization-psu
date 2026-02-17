@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
+
 Evaluates on ACTUAL BridgeData V2 task categories available in data/scripted_raw/
-This is a valid SOTA replication using the real training data distribution
+Adapted SOTA replication using the real training data distribution.
+
 """
 
 import os
