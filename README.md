@@ -28,6 +28,7 @@ This repository implements a **multimodal enhancer** that significantly improves
 | **`multimodal_enhancer-results-500-samples.json`** | **Multimodal enhancer results** | 1000 enhanced predictions showing +24.1% improvement |
 | **`same_skill_statistical_analysis.json`** | **Statistical analysis results** | Complete statistical significance testing and effect sizes |
 | **`baseline_500_samples_results.json`** | Legacy baseline data | 1000 predictions for comparison |
+| **`/Results-Log/Baseline Screenshots (1-500) && Log Dump (500 Samples)`** | Screenshots and Log Messages from console for each prediction 
 
 ### **📋 Documentation**
 
