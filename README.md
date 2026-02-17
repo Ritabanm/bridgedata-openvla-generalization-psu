@@ -1,96 +1,191 @@
-# OpenVLA Enhancement Framework
+# OpenVLA Multimodal Enhancement Framework
 
-Enhancing Vision-Language-Action models through multimodal neural networks, game theory ensembles, and reinforcement learning.
+Enhancing Vision-Language-Action model predictions through multimodal neural networks and statistical analysis.
 
 ## 🎯 Overview
 
-Multiple approaches to improve OpenVLA predictions on BridgeData robotics tasks:
+This repository implements a **multimodal enhancer** that significantly improves OpenVLA predictions on BridgeData robotics tasks through attention-based neural networks and data augmentation.
 
-- **Multimodal Enhancer**: Attention-based neural network with data augmentation
-- **Game Theory Ensemble**: Cooperative game theory using Shapley values  
-- **Advanced RL**: PPO-based action correction and policy refinement
+**Key Achievement**: **+24.1% improvement** in action prediction MAE over OpenVLA baseline (statistically significant, p < 0.0001).
 
-## 📁 Core Files
+## 📁 Repository Structure
+
+### **� Core Python Scripts**
 
 | File | Purpose | Key Features |
 |------|---------|--------------|
-| **`openvla-baseline.py`** | OpenVLA baseline implementation | SOTA VLA model predictions |
-| **`multimodal_enhancer.py`** | Multimodal neural enhancement | Attention mechanisms, data augmentation |
-| **`game_theory_enhancer.py`** | Game theory ensemble | Shapley values, cooperative learning |
-| **`advanced_rl_experiments.py`** | RL-based enhancement | PPO action correction, safety layers |
-| **`experiments.py`** | Comprehensive testing | Cross-validation, statistical analysis |
+| **`multimodal_enhancer.py`** | **Main multimodal enhancement method** | Attention mechanisms, data augmentation, cross-validation, achieves +24.1% MAE improvement |
+| **`openvla-baseline.py`** | OpenVLA baseline implementation | SOTA VLA model predictions, generates baseline comparison data |
+| **`sota_replication.py`** | State-of-the-art replication | Reproduces key results from existing literature |
+| **`experiments.py`** | Comprehensive testing framework | Cross-validation, statistical analysis, multiple evaluation metrics |
+| **`statistical_analysis.py`** | Statistical significance testing | Paired t-tests, effect sizes, confidence intervals, visualizations |
+
+### **📊 Results & Data Files**
+
+| File | Purpose | Content |
+|------|---------|---------|
+| **`baseline_500_samples_results.json`** | **OpenVLA baseline data** | 1000 predictions (500 samples × 2 timesteps) for comparison |
+| **`multimodal_enhancer-results-500-samples.json`** | **Multimodal enhancer results** | 1000 enhanced predictions showing +24.1% improvement |
+| **`same_skill_statistical_analysis.json`** | **Statistical analysis results** | Complete statistical significance testing and effect sizes |
+| **`baseline_100_samples_results.json`** | Legacy baseline data | 200 predictions for historical comparison |
+
+### **📋 Documentation**
+
+| File | Purpose |
+|------|---------|
+| **`README.md`** | This file - complete repository guide |
+| **`LICENSE`** | Project license information |
+| **`.gitignore`** | Git ignore patterns |
 
 ## 🚀 Quick Setup
 
 ```bash
-# Environment
+# Environment setup
 conda create -n openvla-psu python=3.10
 conda activate openvla-psu
 
-# Dependencies
-pip install torch numpy scikit-learn matplotlib pillow tqdm scipy
+# Install dependencies
+pip install torch numpy scikit-learn matplotlib pillow tqdm scipy pandas
 
-# Required data
-# Place: baseline_100_samples_results.json in repo root
+# Verify setup
+python multimodal_enhancer.py --help
 ```
 
 ## 💻 Usage
 
+### **Run the Main Multimodal Enhancer**
 ```bash
-# Run individual methods
+# Complete pipeline with cross-validation
 python multimodal_enhancer.py
-python game_theory_enhancer.py  
-python advanced_rl_experiments.py
 
-# Comprehensive evaluation
+# Expected runtime: 10-20 minutes on CPU, 5-10 minutes on GPU/MPS
+# Output: multimodal_enhancer_results.json
+```
+
+### **Generate OpenVLA Baseline**
+```bash
+# Create baseline comparison data
+python openvla-baseline.py
+
+# Output: baseline_500_samples_results.json
+```
+
+### **Statistical Analysis**
+```bash
+# Compare multimodal enhancer vs OpenVLA baseline
+python statistical_analysis.py
+
+# Output: same_skill_statistical_analysis.json + visualization plots
+```
+
+### **SOTA Replication**
+```bash
+# Replicate state-of-the-art results
+python sota_replication.py
+
+# Tests reproducibility of key findings
+```
+
+### **Comprehensive Experiments**
+```bash
+# Run all evaluation methods
 python experiments.py
+
+# Includes cross-validation, ablation studies, etc.
 ```
 
-## 📊 Results
+## 📊 Key Results
 
-- **Multimodal Enhancer**: 20-40% improvement on complex tasks
-- **Game Theory**: 10-25% improvement through ensemble diversity
-- **Advanced RL**: 5-15% improvement through policy refinement
+### **🏆 Multimodal Enhancer Performance**
+- **Action Prediction MAE**: 0.1437 → 0.1091 (**+24.1% improvement**)
+- **Statistical Significance**: p < 0.0001 (highly significant)
+- **Effect Size**: Cohen's d = 0.483 (small-to-medium)
+- **Cross-Validation**: +25.6% ± 1.0% across 5 folds
 
-## 🔧 Key Parameters
+### **📈 Per-Dimension Improvements**
+- **Gripper**: +59.0% (major improvement)
+- **Pitch**: +20.9% 
+- **Roll**: +25.5%
+- **Z**: +8.5%
+- **Y**: +2.2%
+- **X**: -1.0% (minimal degradation)
+- **Yaw**: -0.2% (minimal degradation)
 
+### **🎯 Task Completion**
+- **Baseline**: 43.8% success rate
+- **Multimodal**: 47.6% success rate (+3.8% absolute)
+- **Note**: Task completion prediction remains challenging (F1 = 0.0)
+
+## 🔧 Technical Details
+
+### **Multimodal Enhancer Architecture**
 ```python
-# Multimodal
-HIDDEN_DIM = 256
-AUGMENT_FACTOR = 5
-
-# Game Theory  
-NUM_PLAYERS = 5
-
-# Advanced RL
-PPO_EPOCHS = 10
+# Key parameters
+HIDDEN_DIM = 256          # Neural network hidden dimension
+AUGMENT_FACTOR = 5        # Data augmentation multiplier
+BATCH_SIZE = 16          # Training batch size
+LEARNING_RATE = 1e-3     # Adam optimizer learning rate
+EPOCHS = 100             # Training epochs
 ```
+
+### **Data Processing**
+- **Input**: OpenVLA predictions + images + instruction embeddings
+- **Augmentation**: Noise injection, mixup, trajectory-based sampling
+- **Output**: Enhanced 7D action predictions + task completion probability
+
+### **Evaluation Metrics**
+- **MAE** (Mean Absolute Error): Primary action prediction metric
+- **MSE** (Mean Squared Error): Secondary action prediction metric  
+- **Task Completion**: Binary classification accuracy
+- **Statistical Tests**: Paired t-test, Wilcoxon signed-rank test
 
 ## 🚨 Troubleshooting
 
-- **MPS Error**: Auto-detects CPU fallback
-- **Missing Data**: Check `baseline_100_samples_results.json`
-- **Memory Issues**: Use CPU mode or reduce batch size
+| Issue | Solution |
+|-------|----------|
+| **MPS Device Error | Automatically falls back to CPU |
+| **Missing baseline data | Run `python openvla-baseline.py` first |
+| **Memory Issues | Use CPU mode or reduce `batch_size` |
+| **CUDA Out of Memory | Set `device='cpu'` in script parameters |
 
-## 🎯 Quick Start
+## 🎯 Quick Start Example
 
 ```bash
+# Complete workflow (recommended order)
 conda create -n openvla-psu python=3.10 && conda activate openvla-psu
-pip install torch numpy scikit-learn matplotlib pillow tqdm scipy
+pip install torch numpy scikit-learn matplotlib pillow tqdm scipy pandas
+
+# 1. Generate baseline data
+python openvla-baseline.py
+
+# 2. Run multimodal enhancer (main contribution)
 python multimodal_enhancer.py
+
+# 3. Analyze results
+python statistical_analysis.py
+
+# Expected: +24.1% MAE improvement, statistically significant
 ```
 
-**Runtime**: 5-15 minutes on CPU, 2-5 minutes on GPU.
-
----
+**Typical Runtime**: 15-25 minutes total on modern laptop (CPU), 8-15 minutes on GPU/MPS.
 
 ## 📄 Citation
 
 ```bibtex
-@misc{openvla_enhancement,
-  title={OpenVLA Enhancement Framework: Multimodal and Game Theory Approaches},
+@misc{openvla_multimodal_enhancement,
+  title={Multimodal Enhancement of OpenVLA: Statistical Analysis and Performance Improvement},
   author={Ritaban Mitra},
   year={2026},
   url={https://github.com/ritabanm/bridgedata-openvla-generalization-psu}
 }
 ```
+
+## 🔬 Research Impact
+
+This work demonstrates that **multimodal neural enhancement** can significantly improve Vision-Language-Action model predictions:
+- **Real-world robotics data** (BridgeData)
+- **Statistically significant improvements** (p < 0.0001)
+- **Reproducible methodology** with cross-validation
+- **Open-source implementation** for community use
+
+---
