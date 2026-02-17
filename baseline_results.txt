@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/ritaban/Desktop/Research_development/research-projects/Penn State Robotics/bridgedata-openvla-generalization-psu/baseline_100_samples.py", line 17, in <module>
-    from transformers import AutoProcessor, AutoModelForImageTextToText
-ImportError: cannot import name 'AutoModelForImageTextToText' from 'transformers' (/Users/ritaban/miniconda/envs/openvla-psu/lib/python3.10/site-packages/transformers/__init__.py)
