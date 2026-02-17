@@ -429,6 +429,10 @@ HARDCODED_PREDICTIONS = [
     }
 ]
 
+def get_results():
+    """Get the full results list with sample and timestep info"""
+    return HARDCODED_PREDICTIONS
+
 def get_hardcoded_data():
     """Return hardcoded predictions and ground truth"""
     openvla_preds = []

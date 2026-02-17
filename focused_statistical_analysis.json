@@ -1,0 +1,52 @@
+{
+  "analysis_info": {
+    "timestamp": "2026-02-05T20:37:06.910420",
+    "comparison": "OpenVLA Baseline vs Multimodal Enhancer",
+    "sample_sizes": {
+      "openvla_baseline": 40,
+      "multimodal_enhancer": 40
+    }
+  },
+  "descriptive_stats": {
+    "openvla_baseline": {
+      "mean": 0.124196582833773,
+      "std": 0.08743749352651037,
+      "median": 0.12853267954796477,
+      "min": 0.011123315587913114,
+      "max": 0.2696728968925311,
+      "n": 40
+    },
+    "multimodal_enhancer": {
+      "mean": 0.15169893112132352,
+      "std": 0.059282796193422485,
+      "median": 0.15452965087856033,
+      "min": 0.06233218754641712,
+      "max": 0.2875115524179169,
+      "n": 40
+    }
+  },
+  "statistical_tests": {
+    "paired_t_test": {
+      "t_statistic": -1.5017500892329554,
+      "p_value": 0.14121573096653328,
+      "significant_05": false,
+      "significant_01": false,
+      "significant_001": false
+    },
+    "wilcoxon_test": {
+      "statistic": 304.0,
+      "p_value": 0.1577509693797765,
+      "significant_05": false
+    },
+    "effect_size": {
+      "cohens_d": -0.3681775020762314,
+      "interpretation": "small"
+    },
+    "confidence_interval": {
+      "mean_difference": -0.02750234828755054,
+      "ci_lower": -0.06454496314055205,
+      "ci_upper": 0.00954026656545098,
+      "improvement_percent": -22.144206917802393
+    }
+  }
+}

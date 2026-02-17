@@ -1,0 +1,50 @@
+{
+  "analysis_summary": {
+    "total_models_analyzed": 4,
+    "analysis_date": "2026-02-04T20:10:26.771420",
+    "statistical_tests_performed": [
+      "paired_t_tests",
+      "anova",
+      "wilcoxon",
+      "multiple_comparison_correction"
+    ]
+  },
+  "model_metrics": {
+    "baseline": {
+      "mean_mae": 0.16287013639626707,
+      "std_mae": 0.08611883869626824,
+      "median_mae": 0.1536,
+      "min_mae": 0.0193,
+      "max_mae": 0.3147,
+      "sample_count": 199,
+      "ci_95": [
+        0.1508009962762023,
+        0.17493927651633184
+      ]
+    },
+    "game_theory": {
+      "mean_mae": 0,
+      "std_mae": 0,
+      "improvement_percent": 0,
+      "ensemble_size": 0,
+      "shapley_contribution": {}
+    },
+    "coherent_multimodal": {
+      "single_split_improvement": 8.239319801330566,
+      "cross_val_improvement": 15.68471164703369,
+      "cross_val_std": 3.814503528849406,
+      "success_rate": 100.0,
+      "best_dimension": null
+    }
+  },
+  "statistical_tests": {},
+  "key_findings": [
+    "Best performing model: game_theory (MAE: 0.0000)",
+    "Most consistent model: game_theory (Std: 0.0000)",
+    "Highest improvement: coherent_multimodal (+8.2%)"
+  ],
+  "recommendations": [
+    "Recommended for deployment: coherent_multimodal (+8.2% improvement)",
+    "Most reliable for consistent performance: coherent_multimodal (100.0% success rate)"
+  ]
+}

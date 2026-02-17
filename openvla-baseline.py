@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Working Zero-Shot Evaluation - uses the successful fast test approach
-"""
-
 import os
 import sys
 import time
@@ -180,7 +175,7 @@ def run_evaluation():
         return
     
     # Load samples
-    samples = load_sample_data(max_samples=30)
+    samples = load_sample_data(max_samples=500)  # Increased for statistical power
     if not samples:
         print("❌ No samples loaded")
         return
@@ -263,7 +258,7 @@ def run_evaluation():
                 continue
             
             # Ensure 7-dimensional prediction
-            if len(pred_action) != 7:
+            if len(pred_action) != 7: 
                 if len(pred_action) >= 7:
                     pred_action = pred_action[:7]
                 else:
@@ -330,11 +325,40 @@ def run_evaluation():
             'detailed_results': results
         }
         
-        with open("working_evaluation_results.json", 'w') as f:
-            json.dump(summary, f, indent=2)
+        print(f"\n✅ Evaluation complete!")
         
-        print(f"\n💾 Results saved to: working_evaluation_results.json")
-        print(f"✅ Evaluation complete!")
+        # Convert numpy types to Python types for JSON serialization
+        def convert_numpy(obj):
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            elif isinstance(obj, np.bool_):
+                return bool(obj)
+            elif isinstance(obj, (np.int64, np.int32)):
+                return int(obj)
+            elif isinstance(obj, (np.float64, np.float32)):
+                return float(obj)
+            elif isinstance(obj, dict):
+                return {key: convert_numpy(value) for key, value in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_numpy(item) for item in obj]
+            else:
+                return obj
+        
+        # Convert the entire summary structure
+        json_compatible_summary = convert_numpy(summary)
+        
+        # Save results to file
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"baseline_500_samples_results_{timestamp}.json"
+        
+        with open(filename, 'w') as f:
+            json.dump(json_compatible_summary, f, indent=2)
+        
+        print(f"💾 Saved results to {filename}")
+        print(f"📊 Total predictions: {len(all_mae)}")
+        print(f"📈 Average MAE: {np.mean(all_mae):.4f}")
+        print(f"🎯 Task completion rate: {task_success_rate:.1%}")
 
 if __name__ == "__main__":
     run_evaluation()

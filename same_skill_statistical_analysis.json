@@ -1,0 +1,57 @@
+{
+  "analysis_info": {
+    "timestamp": "2026-02-16T19:19:53.611970",
+    "comparison": "500-sample OpenVLA vs Multimodal Enhancer (Same Skill)",
+    "sample_sizes": {
+      "openvla_500": 1000,
+      "multimodal_enhancer": 1000
+    }
+  },
+  "descriptive_stats": {
+    "openvla_500": {
+      "mean": 0.14368732857142857,
+      "std": 0.08807423347199676,
+      "median": 0.1299857142857143,
+      "min": 0.009828571428571428,
+      "max": 0.31697142857142857,
+      "n": 1000
+    },
+    "multimodal_enhancer": {
+      "mean": 0.10908475760374754,
+      "std": 0.049895489748572705,
+      "median": 0.10962874189551387,
+      "min": 0.01971929534712607,
+      "max": 0.28205676609650254,
+      "n": 1000
+    }
+  },
+  "statistical_tests": {
+    "paired_t_test": {
+      "t_statistic": 10.84595533798011,
+      "p_value": 5.47614209880733e-26,
+      "significant_05": true,
+      "significant_01": true,
+      "significant_001": true
+    },
+    "wilcoxon_test": {
+      "statistic": 164992.0,
+      "p_value": 1.0335691721552041e-20,
+      "significant_05": true
+    },
+    "effect_size": {
+      "cohens_d": 0.48342914330723885,
+      "interpretation": "small"
+    },
+    "confidence_interval": {
+      "mean_difference": 0.034602570967681025,
+      "ci_lower": 0.0283419827985674,
+      "ci_upper": 0.04086315913679465,
+      "improvement_percent": 24.081852806164257
+    },
+    "power_analysis": {
+      "current_power": 1.0,
+      "samples_needed_80_power": 67.16948431016544,
+      "effect_size": 0.48342914330723885
+    }
+  }
+}
