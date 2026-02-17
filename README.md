@@ -98,7 +98,7 @@ python experiments.py
 ## 📊 Key Results
 
 ### **🏆 Multimodal Enhancer Performance**
-- **Action Prediction MAE**: 0.1437 → 0.1091 (**+24.1% improvement**)
+- **Action Prediction MAE**: 0.1437 → 0.1119 (**+22.12% improvement**)
 - **Statistical Significance**: p < 0.0001 (highly significant)
 - **Effect Size**: Cohen's d = 0.483 (small-to-medium)
 - **Cross-Validation**: +25.6% ± 1.0% across 5 folds
