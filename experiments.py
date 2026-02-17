@@ -57,7 +57,7 @@ class ExperimentResult:
 class BaselineData:
     """Load and manage baseline OpenVLA predictions"""
     
-    def __init__(self, baseline_file="baseline_100_samples_results.json"):
+    def __init__(self, baseline_file="baseline_500_samples_results.json"):
         self.baseline_file = baseline_file
         self.predictions = []
         self.ground_truths = []
@@ -1132,7 +1132,7 @@ class AugmentationBasedEnhancer:
 class ExperimentRunner:
     """Main experiment runner"""
     
-    def __init__(self, baseline_file="baseline_100_samples_results.json"):
+    def __init__(self, baseline_file="baseline_500_samples_results.json"):
         self.baseline_data = BaselineData(baseline_file)
         self.predictions, self.ground_truths = self.baseline_data.get_arrays()
         self.baseline_mae = mean_absolute_error(self.predictions, self.ground_truths)
@@ -1532,7 +1532,7 @@ def main():
     set_seed(42)
     
     parser = argparse.ArgumentParser(description="VLA Enhancement Experiments")
-    parser.add_argument('--baseline_file', type=str, default="baseline_100_samples_results.json",
+    parser.add_argument('--baseline_file', type=str, default="baseline_500_samples_results.json",
                         help="Path to baseline predictions file")
     parser.add_argument('--k_folds', type=int, default=5, help="K-fold cross validation")
     
