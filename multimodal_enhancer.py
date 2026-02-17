@@ -121,7 +121,7 @@ class AugmentedBridgeDataset(Dataset):
     def __getitem__(self, idx):
         pair = self.augmented_pairs[idx]
         
-        # Load and preprocess image (dummy for now since we use cached data)
+        # Load and preprocess image 
         try:
             if os.path.exists(pair['image_path']):
                 image = Image.open(pair['image_path']).convert('RGB')
