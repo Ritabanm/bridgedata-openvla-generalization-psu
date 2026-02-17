@@ -6,7 +6,7 @@ Enhancing Vision-Language-Action model predictions through multimodal neural net
 
 This repository implements a **multimodal enhancer** that significantly improves OpenVLA predictions on BridgeData robotics tasks through attention-based neural networks and data augmentation.
 
-**Key Achievement**: **+24.1% improvement** in action prediction MAE over OpenVLA baseline (statistically significant, p < 0.0001).
+**Key Achievement**: **+22.12% improvement** in action prediction MAE over OpenVLA baseline (statistically significant, p < 0.0001).
 
 ## 📁 Repository Structure
 
